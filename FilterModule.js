@@ -5,16 +5,23 @@ var path = require('path');
 
 	fs.readdir(directorio,function (error, files){
 	var ficherosFiltrados =Array();
-	files.forEach(function (file){
+	if(error){
+		return callback(error)
+	}
 
-		var ext = "."+extension;
-		if(ext == path.extname(file)){
-
-			ficherosFiltrados.push(file)
-		}
 		
-	});
-	callback(null,ficherosFiltrados);
+		files.forEach(function (file){
+
+			var ext = "."+extension;
+			if(ext == path.extname(file)){
+
+				ficherosFiltrados.push(file)
+			}
+			
+		});
+		callback(null,ficherosFiltrados);
+	
+
 })
 	
 
