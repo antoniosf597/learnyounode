@@ -7,7 +7,7 @@ http.get(process.argv[2], function(res) {
 		console.log(data);
 	})
 	res.on("error", function (data) { 
-		console.log('Error:' + error.message);
+		console.log('Error:' + error.messagele);
 	})
 
 
