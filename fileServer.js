@@ -7,6 +7,7 @@ var server = http.createServer(function (req, res) {
  var fichero = fs.createReadStream(process.argv[3]);
 	 fichero.pipe(res);
 
+
 /*  fichero.pipe(bl(function (err, data) { 
 	  	if(err){
 	  		return console.log(err.message);
